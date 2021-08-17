@@ -19,6 +19,22 @@ app.get('/api/notes', (req, res) => {
     })
 })
 
+app.post('/api/notes', (req, res) => {
+    const newNote = req.body;
+    console.log(newNote);
+    fs.readFile(path.join(__dirname, '/db/db.json'), (err, data) => {
+        // console.log(JSON.parse(data));
+        let jsonDB = JSON.parse(data);
+        console.log(jsonDB);
+        console.log(newNote);
+        jsonDB.push(newNote);
+        console.log(jsonDB);
+        fs.writeFile(path.join(__dirname, '/db/db.json'), JSON.stringify(jsonDB), (e) => {
+            if (e) throw e;
+        });
+    })
+})
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 })
