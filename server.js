@@ -31,6 +31,7 @@ app.post('/api/notes', (req, res) => {
         console.log(jsonDB);
         fs.writeFile(path.join(__dirname, '/db/db.json'), JSON.stringify(jsonDB), (e) => {
             if (e) throw e;
+            res.json(`Note added successfully`);
         });
     })
 })
