@@ -37,7 +37,7 @@
 
   Here is a demo of the app running: 
 
-  ![Animation showing the usage of the project](./readme_assets/imgs/demo.gif)
+  ![Animation showing the usage of the project](./readme_assets/imgs/DEMO.gif)
 
   ## Contribution Instructions
 
